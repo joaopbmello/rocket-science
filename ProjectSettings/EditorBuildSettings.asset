@@ -8,10 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+<<<<<<< HEAD
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 05de077ba908e6f45868dec4d384a470
   - enabled: 1
     path: Assets/Scenes/ZoomScene.unity
     guid: 2d7e3baa086f8794e9e6281ca34acd90
+=======
+>>>>>>> 7376efa233d5235d0260443120eb758aa47f26c7
   m_configObjects: {}
