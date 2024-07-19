@@ -509,7 +509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adcddb2bc76114446a6bfcf27ac9f847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomedIn: 0
+  zoomPanel: {fileID: 0}
 --- !u!4 &1116982914
 Transform:
   m_ObjectHideFlags: 0
