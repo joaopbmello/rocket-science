@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
+    public string taskName;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +20,9 @@ public class ButtonManager : MonoBehaviour
     }
 
     void OnMouseDown(){
-        if (!SceneManager.GetSceneByName("ZoomScene").isLoaded){
-            SceneManager.LoadScene("ZoomScene", LoadSceneMode.Additive);
+        if (GameManager.instance.currentTask == "" && !SceneManager.GetSceneByName(taskName).isLoaded){
+            GameManager.instance.currentTask = taskName;
+            SceneManager.LoadScene(taskName, LoadSceneMode.Additive);
         }
     }
 }
