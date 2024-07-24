@@ -42,13 +42,6 @@ public class Task1 : MonoBehaviour
 
         SpriteRenderer light = GameObject.Find(lightName).GetComponent<SpriteRenderer>();
 
-        if (targets[id])
-        {
-            light.color = new Color(56f / 255f, 183f / 255f, 100f / 255f);
-        }
-        else
-        {
-            light.color = new Color(148f / 255f, 176f / 255f, 194f / 255f);
-        }
+        light.color = targets[id] ? new Color(56f / 255f, 183f / 255f, 100f / 255f) : new Color(148f / 255f, 176f / 255f, 194f / 255f);
     }
 }
