@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
+    public int id;
     public string taskName;
 
     // Start is called before the first frame update
@@ -20,7 +21,9 @@ public class ButtonManager : MonoBehaviour
     }
 
     void OnMouseDown(){
-        if (GameManager.instance.currentTask == "" && !SceneManager.GetSceneByName(taskName).isLoaded){
+        if (GameManager.instance.IsPending(id) && GameManager.instance.currentTask == "" 
+            && !SceneManager.GetSceneByName(taskName).isLoaded)
+        {
             GameManager.instance.currentTask = taskName;
             SceneManager.LoadScene(taskName, LoadSceneMode.Additive);
         }

@@ -768,6 +768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0657eae192b94634a860102f05981f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3
   triangle: {fileID: 3237133166536932268, guid: 599163f88715b3d4dbc88a8d473bdf7d, type: 3}
   target: {fileID: 6721800966880731309, guid: aa50aecf8aed10042a841f5ab1022539, type: 3}
 --- !u!4 &2145838330

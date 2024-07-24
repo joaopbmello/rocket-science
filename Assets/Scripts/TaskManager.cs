@@ -5,41 +5,43 @@ using UnityEngine.SceneManagement;
 
 public class TaskManager : MonoBehaviour
 {
+    public int id;
+
     // Start is called before the first frame update
     void Start()
     {
-        //Task1();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (SceneManager.GetSceneByName(GameManager.instance.currentTask).isLoaded && Input.GetMouseButtonDown(0))
+        if (GameManager.instance != null && GameManager.instance.currentTask != "")
         {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePosition.z = 0;
-
-            BoxCollider2D boxCollider = GameObject.Find("Task Panel").GetComponent<BoxCollider2D>();
-            if (!boxCollider.bounds.Contains(mousePosition))
+            if (SceneManager.GetSceneByName(GameManager.instance.currentTask).isLoaded && Input.GetMouseButtonDown(0))
             {
-                SceneManager.UnloadSceneAsync(GameManager.instance.currentTask);
-                GameManager.instance.currentTask = "";
+                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                mousePosition.z = 0;
+
+                BoxCollider2D boxCollider = GameObject.Find("Task Panel").GetComponent<BoxCollider2D>();
+                if (!boxCollider.bounds.Contains(mousePosition))
+                {
+                    CloseTask();
+                }
             }
         }
-    }
 
-    public GameObject triangle;
-    public GameObject target;
-
-    void Task1()
-    {
-        float[,] centers = { { -3.5f, 1.5f }, { 3.5f, 1.5f }, { -3.5f, -1.5f }, { 3.5f, -1.5f } };
-
-        for (int i = 0; i < 4; i++)
-        {
-            Vector2 v = new Vector2(centers[i, 0], centers[i, 1]) + Random.insideUnitCircle.normalized * 1.25f;
-            Vector3 v3 = v;
-            Instantiate(target, v3, Quaternion.identity);
+        // tirar depois
+        if (Input.GetKeyDown(KeyCode.X)){
+            GameManager.instance.CompleteTask(id);
+            CloseTask();
         }
     }
+
+    public void CloseTask()
+    {
+        SceneManager.UnloadSceneAsync(GameManager.instance.currentTask);
+        GameManager.instance.currentTask = "";
+    }
+
 }

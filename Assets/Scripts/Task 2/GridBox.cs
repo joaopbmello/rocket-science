@@ -23,14 +23,7 @@ public class GridBox : MonoBehaviour
 
     private void UpdateColor()
     {
-        if (selected)
-        {
-            sr.color = Color.green;
-        }
-        else
-        {
-            sr.color = Color.red;
-        }
+        sr.color = selected ? Color.green : Color.red;
     }
 
     void OnMouseDown()
@@ -38,12 +31,9 @@ public class GridBox : MonoBehaviour
         if (!selected)
         {
             selected = true;
+            GameObject.Find("GridPanel").GetComponent<GridPanel>().SelectBox();
             UpdateColor();
         }
     }
-
-    void Update()
-    {
-
-    }
+    
 }

@@ -10,7 +10,7 @@ public class GridPanel : MonoBehaviour
 
     void Start()
     {
-        gridTransform = gameObject.GetComponent<Transform>();
+        gridTransform = gameObject.transform;
 
         HashSet<int> uniqueIndexes = new HashSet<int>();
         while (uniqueIndexes.Count < unselectedCount)
@@ -22,19 +22,18 @@ public class GridPanel : MonoBehaviour
         for (int i = 0; i < totalBoxes; i++)
         {
             GridBox gridBox = gridTransform.GetChild(i).GetComponent<GridBox>();
-            if (unselectedIndexes.Contains(i))
-            {
-                gridBox.SetSelected(false);
-            }
-            else
-            {
-                gridBox.SetSelected(true);
-            }
+            gridBox.SetSelected(!unselectedIndexes.Contains(i));
         }
     }
 
     void Update()
     {
+        if (unselectedCount == 0){
+            GameManager.instance.CompleteTask(2);
+        }
+    }
 
+    public void SelectBox(){
+        unselectedCount--;
     }
 }

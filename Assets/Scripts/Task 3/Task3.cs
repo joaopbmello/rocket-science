@@ -22,10 +22,10 @@ public class Task3 : MonoBehaviour
     void Update()
     {
         if (height >= maxHeight){
-            Debug.Log("sinto muito");
+            GameManager.instance.GameOver();
         }
         else if (height <= minHeight){
-            Debug.Log("lenda");
+            GameManager.instance.CompleteTask(3);
         }
         else if (!buttonPressed){
             height = Mathf.Min(height + increaseRate * Time.deltaTime, maxHeight);   
