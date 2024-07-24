@@ -1,7 +1,7 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -37,7 +37,8 @@ public class GameManager : MonoBehaviour
         }
         pendingTasks = new List<int>(uniqueIndexes);
 
-        foreach (int task in pendingTasks){
+        foreach (int task in pendingTasks)
+        {
             InitializeTask(task);
         }
     }
@@ -75,7 +76,8 @@ public class GameManager : MonoBehaviour
         GameManager.instance.currentTask = "";
     }
 
-    public bool IsPending(int task){
+    public bool IsPending(int task)
+    {
         return pendingTasks.Contains(task);
     }
 

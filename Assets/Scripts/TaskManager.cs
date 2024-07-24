@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,13 +5,11 @@ public class TaskManager : MonoBehaviour
 {
     public int id;
 
-    // Start is called before the first frame update
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (GameManager.instance != null && GameManager.instance.currentTask != "")
@@ -32,7 +28,8 @@ public class TaskManager : MonoBehaviour
         }
 
         // tirar depois
-        if (Input.GetKeyDown(KeyCode.X)){
+        if (Input.GetKeyDown(KeyCode.X))
+        {
             GameManager.instance.CompleteTask(id);
             CloseTask();
         }

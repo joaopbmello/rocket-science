@@ -5,13 +5,13 @@ public class TargetTrigger : MonoBehaviour
     public Task1 taskScript;
     public int id;
     private SpriteRenderer sr;
-    
-    // Start is called before the first frame update
+
     void Start()
     {
         taskScript = GameObject.Find("Task 1").GetComponent<Task1>();
         sr = gameObject.GetComponent<SpriteRenderer>();
-        sr.color = Color.red;
+        sr.color = new Color(0f, 0f, 0f, 0f);
+        taskScript.changeLight(id);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -19,7 +19,7 @@ public class TargetTrigger : MonoBehaviour
         if (other.gameObject.CompareTag("Line"))
         {
             taskScript.targets[id] = true;
-            sr.color = Color.green;
+            taskScript.changeLight(id);
         }
     }
 
@@ -28,7 +28,7 @@ public class TargetTrigger : MonoBehaviour
         if (other.gameObject.CompareTag("Line"))
         {
             taskScript.targets[id] = false;
-            sr.color = Color.red;
+            taskScript.changeLight(id);
         }
     }
 }

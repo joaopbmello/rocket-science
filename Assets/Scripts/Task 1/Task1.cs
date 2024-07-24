@@ -1,40 +1,54 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Task1 : MonoBehaviour
 {
-    public GameObject triangle;
     public GameObject target;
     public List<bool> targets = new List<bool> { false, false, false, false };
 
-    // Start is called before the first frame update
     void Start()
     {
-        float[,] centers = { { -3.5f, 1.5f }, { 3.5f, 1.5f }, { -3.5f, -1.5f }, { 3.5f, -1.5f } };
+        float[,] centers = { { -4f, 2.5f }, { 1f, 2.5f }, { -4f, -2.5f }, { 1f, -2.5f } };
 
         for (int i = 0; i < 4; i++)
         {
-            Vector3 v = new Vector2(centers[i, 0], centers[i, 1]) + Random.insideUnitCircle.normalized * 1.25f;
+            Vector3 v = new Vector2(centers[i, 0], centers[i, 1]) + Random.insideUnitCircle.normalized * 2f;
             GameObject t = Instantiate(target, v, Quaternion.identity);
             t.GetComponent<TargetTrigger>().id = i;
+            t.transform.SetParent(this.transform);
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!targets.Contains(false))
         {
-            // tentar fazer surgir na nova cena pra não precisar disso
-            foreach (GameObject go in GameObject.FindObjectsOfType<GameObject>(true))
+            // Destruir todos os alvos manualmente
+            foreach (Transform child in transform)
             {
-                if (go.CompareTag("Target")) Destroy(go);
+                if (child.CompareTag("Target"))
+                {
+                    Destroy(child.gameObject);
+                }
             }
 
             GameManager.instance.CompleteTask(1);
         }
     }
 
+    public void changeLight(int id)
+    {
+        string lightName = "Light " + (id + 1);
+
+        SpriteRenderer light = GameObject.Find(lightName).GetComponent<SpriteRenderer>();
+
+        if (targets[id])
+        {
+            light.color = new Color(56f / 255f, 183f / 255f, 100f / 255f);
+        }
+        else
+        {
+            light.color = new Color(148f / 255f, 176f / 255f, 194f / 255f);
+        }
+    }
 }
