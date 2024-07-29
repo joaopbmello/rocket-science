@@ -4,6 +4,7 @@ public class Pipe : MonoBehaviour
 {
     public bool isConnected = false;
     public int isCurved;
+    public Animator animator;
 
     public int row, column;
     public char direction1, direction2;
@@ -13,17 +14,25 @@ public class Pipe : MonoBehaviour
     {
         pipeGrid = GameObject.Find("PipeGrid").GetComponent<PipeGrid>();
         UpdateDirections();
+
+        if (animator == null)
+        {
+            animator = GetComponent<Animator>();
+        }
+
     }
 
     void Update()
     {
         //isConnected = CheckConnection();
 
-        if (isConnected){
-            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        if (isConnected)
+        {
+            animator.SetBool("isConnected", true);
         }
-        else{
-            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        else
+        {
+            animator.SetBool("isConnected", false);
         }
     }
 
@@ -35,7 +44,7 @@ public class Pipe : MonoBehaviour
 
     void UpdateDirections()
     {
-        int angle = (int) transform.localRotation.eulerAngles.z;
+        int angle = (int)transform.localRotation.eulerAngles.z;
         if (isCurved == 1)
         {
             if (angle == 0) SetDirections('D', 'R');
@@ -52,12 +61,14 @@ public class Pipe : MonoBehaviour
         pipeGrid.SetConnections();
     }
 
-    void SetDirections(char d1, char d2){
+    void SetDirections(char d1, char d2)
+    {
         direction1 = d1;
         direction2 = d2;
     }
 
-    public bool containsDirection(char direction){
+    public bool containsDirection(char direction)
+    {
         return direction1 == direction || direction2 == direction;
     }
 
