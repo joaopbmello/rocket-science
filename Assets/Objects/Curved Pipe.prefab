@@ -88,9 +88,10 @@ GameObject:
   - component: {fileID: 1277484675017949804}
   - component: {fileID: 8691873095255542936}
   - component: {fileID: 6003903804705516236}
+  - component: {fileID: 4487408692561404449}
   m_Layer: 0
   m_Name: Curved Pipe
-  m_TagString: Untagged
+  m_TagString: TaskObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -208,3 +209,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5, y: 2.5}
   m_EdgeRadius: 0
+--- !u!114 &4487408692561404449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8271954960704615087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f022e44343bc3584da71eddd62181efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isConnected: 0
+  isCurved: 0
+  row: 0
+  column: 0
+  direction1: 85
+  direction2: 76

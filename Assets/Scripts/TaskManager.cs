@@ -39,6 +39,7 @@ public class TaskManager : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync(GameManager.instance.currentTask);
         GameManager.instance.currentTask = "";
+        GameManager.instance.ClearTask();
     }
 
 }

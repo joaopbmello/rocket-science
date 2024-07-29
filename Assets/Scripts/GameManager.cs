@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public string currentTask = "";
     public float countdownTime = 24.1f;
     public TMP_Text countdownText;
-    public int tasksAmount = 3;
+    public int tasksAmount;
 
     private List<int> pendingTasks;
     private float currentTime;
@@ -31,11 +31,12 @@ public class GameManager : MonoBehaviour
         currentTask = "";
 
         HashSet<int> uniqueIndexes = new HashSet<int>();
-        while (uniqueIndexes.Count < 2) // definir depois a quantidade
+        while (uniqueIndexes.Count < 3) // definir depois a quantidade
         {
             uniqueIndexes.Add(Random.Range(1, tasksAmount + 1));
         }
-        pendingTasks = new List<int>(uniqueIndexes);
+        //pendingTasks = new List<int>(uniqueIndexes);
+        pendingTasks = new List<int>{4};
 
         foreach (int task in pendingTasks)
         {
@@ -70,6 +71,7 @@ public class GameManager : MonoBehaviour
     // task e currentTask?
     public void CompleteTask(int task)
     {
+        ClearTask();
         GameObject.Find("Button " + task.ToString()).GetComponent<SpriteRenderer>().color = Color.green;
         pendingTasks.Remove(task);
         SceneManager.UnloadSceneAsync(GameManager.instance.currentTask);
@@ -85,6 +87,15 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Fim");
         Time.timeScale = 0f;
+    }
+    
+    public void ClearTask(){
+        GameObject[] taskObjects = GameObject.FindGameObjectsWithTag("TaskObject");
+
+        foreach (GameObject go in taskObjects)
+        {
+            Destroy(go);
+        }
     }
 
 }

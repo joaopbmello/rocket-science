@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Target
   - Line
+  - PipeConnection
+  - TaskObject
   layers:
   - Default
   - TransparentFX

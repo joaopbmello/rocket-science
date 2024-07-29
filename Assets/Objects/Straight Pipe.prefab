@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3141823445588224250}
   - component: {fileID: 9093273408386004159}
   - component: {fileID: 8154519189726204726}
+  - component: {fileID: 5637518574129001125}
   m_Layer: 0
   m_Name: Straight Pipe
-  m_TagString: Untagged
+  m_TagString: TaskObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,6 +132,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5, y: 1.5}
   m_EdgeRadius: 0
+--- !u!114 &5637518574129001125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652141911165551960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f022e44343bc3584da71eddd62181efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isConnected: 0
+  isCurved: 0
+  row: 0
+  column: 0
+  direction1: 32
+  direction2: 105
 --- !u!1 &791249631491592560
 GameObject:
   m_ObjectHideFlags: 0
