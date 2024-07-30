@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
             uniqueIndexes.Add(Random.Range(1, tasksAmount + 1));
         }
         //pendingTasks = new List<int>(uniqueIndexes);
-        pendingTasks = new List<int>{4};
+        pendingTasks = new List<int>{1, 2, 3, 4, 5};
 
         foreach (int task in pendingTasks)
         {
