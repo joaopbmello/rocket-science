@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DigitBox : MonoBehaviour
@@ -20,7 +18,7 @@ public class DigitBox : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void UpdateText()
@@ -28,9 +26,9 @@ public class DigitBox : MonoBehaviour
         digitText.text = digit.ToString();
 
         if (passwordScript.isCorrect(id))
-            sp.color = new Color(148f / 255f, 176f / 255f, 194f / 255f);
+            digitText.color = new Color(148f / 255f, 176f / 255f, 194f / 255f);
         else
-            sp.color = new Color(177f / 255f, 62f / 255f, 83f / 255f);
+            digitText.color = new Color(177f / 255f, 62f / 255f, 83f / 255f);
     }
 
     public void Increment()
