@@ -21,16 +21,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
+        instance = this;
         currentTime = countdownTime;
         currentTask = "";
         isWaiting = false;
@@ -72,18 +63,16 @@ public class GameManager : MonoBehaviour
         GameObject.Find("Button " + task.ToString()).GetComponent<SpriteRenderer>().color = newColor;
     }
 
-    // task e currentTask?
     public void CompleteTask(int task)
     {
         Debug.Log("Task " + task.ToString() + " completa");
-        ClearTask();
 
         Color color;
         ColorUtility.TryParseHtmlString("#333B58", out color);
         GameObject.Find("Button " + task.ToString()).GetComponent<SpriteRenderer>().color = color;
-
         pendingTasks.Remove(task);
-        SceneManager.UnloadSceneAsync(GameManager.instance.currentTask);
+
+        StartCoroutine(WaitAndCloseTask(0.5f, GameManager.instance.currentTask));
         GameManager.instance.currentTask = "";
     }
 
@@ -95,7 +84,8 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("Fim");
-        Time.timeScale = 0f;
+        SceneManager.LoadScene("GameOver");
+        Destroy(gameObject);
     }
     
     public void ClearTask(){
@@ -121,5 +111,15 @@ public class GameManager : MonoBehaviour
             pendingTasks.Add(index);
             InitializeTask(index);
         }
+    }
+
+    IEnumerator WaitAndCloseTask(float time, string task){
+        yield return new WaitForSeconds(time);
+
+        if (SceneManager.GetSceneByName(task).isLoaded)
+        {
+            SceneManager.UnloadSceneAsync(task);
+            ClearTask();
+        }        
     }
 }

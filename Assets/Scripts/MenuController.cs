@@ -28,9 +28,13 @@ public class MenuController : MonoBehaviour
         Debug.Log("Options button pressed");
     }
 
-    public void OnQuitButton()
+    public void OnQuitButton(bool onMenuScene)
     {
         Debug.Log("Quit button pressed");
-        Application.Quit();
+        if (onMenuScene)
+            Application.Quit();
+        else
+            SceneManager.LoadScene("MainMenu");        
+        
     }
 }

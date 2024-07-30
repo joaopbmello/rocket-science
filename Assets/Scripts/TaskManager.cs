@@ -26,13 +26,6 @@ public class TaskManager : MonoBehaviour
                 }
             }
         }
-
-        // tirar depois
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            GameManager.instance.CompleteTask(id);
-            CloseTask();
-        }
     }
 
     public void CloseTask()

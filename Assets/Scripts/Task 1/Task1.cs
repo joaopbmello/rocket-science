@@ -23,15 +23,6 @@ public class Task1 : MonoBehaviour
     {
         if (!targets.Contains(false))
         {
-            // Destruir todos os alvos manualmente
-            foreach (Transform child in transform)
-            {
-                if (child.CompareTag("Target"))
-                {
-                    Destroy(child.gameObject);
-                }
-            }
-
             GameManager.instance.CompleteTask(1);
         }
     }
