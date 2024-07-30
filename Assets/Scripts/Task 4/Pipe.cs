@@ -71,41 +71,4 @@ public class Pipe : MonoBehaviour
     {
         return direction1 == direction || direction2 == direction;
     }
-
-    /*
-    bool CheckConnection(){
-        Pipe p;
-
-        // first pipe
-        if (row == 0 && column == 0 && containsDirection('R')){
-            return true;
-        }
-
-        if (containsDirection('U') && isPositionValid(row-1, column)){
-            p = pipeGrid.pipes[row-1, column];
-            if (p.containsDirection('D') && p.isConnected)
-                return true;
-        }
-        if (containsDirection('D') && isPositionValid(row+1, column)){
-            p = pipeGrid.pipes[row+1, column];
-            if (p.containsDirection('U') && p.isConnected)
-                return true;
-        }
-        if (containsDirection('L') && isPositionValid(row, column-1)){
-            p = pipeGrid.pipes[row, column-1];
-            if (p.containsDirection('R') && p.isConnected)
-                return true;
-        }
-        if (containsDirection('R') && isPositionValid(row, column+1)){
-            p = pipeGrid.pipes[row, column+1];
-            if (p.containsDirection('L') && p.isConnected)
-                return true;
-        }
-        return false;
-    }
-
-    bool isPositionValid(int row, int column){
-        return row >= 0 && row < 4 && column >= 0 && column < 4;
-    }
-    */
 }

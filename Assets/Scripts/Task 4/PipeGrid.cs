@@ -4,7 +4,13 @@ using UnityEngine;
 public class PipeGrid : MonoBehaviour
 {
     // 0 = reto, 1 = curvo
-    public int[,] map = { { 0, 1, 0, 1 }, { 0, 0, 0, 0 }, { 1, 1, 0, 1 }, { 0, 0, 0, 1 } };
+    public int[,,] maps = {
+        { { 0, 1, 0, 1 }, { 0, 0, 0, 0 }, { 1, 1, 0, 1 }, { 0, 0, 0, 1 } },
+        { { 1, 1, 0, 0 }, { 0, 0, 0, 0 }, { 0, 0, 1, 1 }, { 1, 1, 0, 0 } },
+        { { 1, 1, 1, 1 }, { 1, 1, 0, 0 }, { 1, 0, 1, 1 }, { 0, 0, 1, 1 } },
+        { { 1, 0, 1, 0 }, { 0, 1, 1, 1 }, { 0, 1, 0, 0 }, { 1, 0, 0, 1 } },
+        { { 0, 1, 1, 1 }, { 1, 0, 0, 0 }, { 0, 1, 1, 0 }, { 1, 0, 1, 1 } }
+    };
     public GameObject curvedPipe, straightPipe;
 
     public Pipe[,] pipes = new Pipe[4, 4];
@@ -25,6 +31,7 @@ public class PipeGrid : MonoBehaviour
 
     void CreatePipes()
     {
+        int mapIndex = Random.Range(0, maps.GetLength(0));
         for (int i = 0; i < 4; i++)
         {
             for (int j = 0; j < 4; j++)
@@ -33,7 +40,7 @@ public class PipeGrid : MonoBehaviour
                 int angle = Random.Range(0, 4) * 90;
 
                 GameObject newPipe;
-                if (map[i, j] == 0)
+                if (maps[mapIndex, i, j] == 0)
                 {
                     newPipe = Instantiate(straightPipe, pos, Quaternion.Euler(0, 0, angle));
                 }
@@ -43,7 +50,7 @@ public class PipeGrid : MonoBehaviour
                 }
 
                 pipes[i, j] = newPipe.GetComponent<Pipe>();
-                pipes[i, j].isCurved = map[i, j];
+                pipes[i, j].isCurved = maps[mapIndex, i, j];
                 pipes[i, j].row = i;
                 pipes[i, j].column = j;
             }
@@ -101,7 +108,6 @@ public class PipeGrid : MonoBehaviour
         if (pipes[0, 3].containsDirection('R') && pipes[0, 3].isConnected)
         {
             finalPipe.SetConnected();
-            Debug.Log("OK");
             GameManager.instance.CompleteTask(4);
         }
     }

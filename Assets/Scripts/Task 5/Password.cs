@@ -28,7 +28,6 @@ public class Password : MonoBehaviour
     {
         if (isCorrect(0) && isCorrect(1) && isCorrect(2) && isCorrect(3))
         {
-            Debug.Log("Task 5 completa");
             GameManager.instance.CompleteTask(5);
         }
     }

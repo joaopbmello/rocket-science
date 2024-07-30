@@ -5,7 +5,7 @@ public class Task3 : MonoBehaviour
     public float increaseRate = 1f, decreaseRate = 3f;
     public bool buttonPressed = false;
 
-    private float height = 0.01f, minHeight = 0f, maxHeight = 6.5f;
+    private float height = 3f, minHeight = 0f, maxHeight = 6.5f;
     private Vector3 initialPosition;
     private Vector3 initialScale;
 

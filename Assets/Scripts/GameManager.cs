@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -10,6 +12,8 @@ public class GameManager : MonoBehaviour
     public float countdownTime = 24.1f;
     public TMP_Text countdownText;
     public int tasksAmount;
+
+    private bool isWaiting;
 
     private List<int> pendingTasks;
     private float currentTime;
@@ -29,50 +33,55 @@ public class GameManager : MonoBehaviour
 
         currentTime = countdownTime;
         currentTask = "";
-
-        HashSet<int> uniqueIndexes = new HashSet<int>();
-        while (uniqueIndexes.Count < 3) // definir depois a quantidade
-        {
-            uniqueIndexes.Add(Random.Range(1, tasksAmount + 1));
-        }
-        //pendingTasks = new List<int>(uniqueIndexes);
-        pendingTasks = new List<int>{1, 2, 3, 4, 5};
-
-        foreach (int task in pendingTasks)
-        {
-            InitializeTask(task);
-        }
+        isWaiting = false;
+        pendingTasks = new List<int>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (pendingTasks.Count == 0)
-        {
-            Debug.Log("Sucesso");
-        }
-        else
-        {
-            currentTime = Mathf.Max(0f, currentTime - Time.deltaTime);
-            countdownText.text = currentTime.ToString("F2");
+        currentTime = Mathf.Max(0f, currentTime - Time.deltaTime);
+        countdownText.text = currentTime.ToString("F2");
+
+        if (currentTime <= 0){
+            if (pendingTasks.Count > 0)
+            {
+                GameOver();
+            }
+            else
+            {
+                Debug.Log("Sucesso");
+            }
         }
 
-        if (currentTime <= 0)
+        if (!isWaiting)
         {
-            GameOver();
+            isWaiting = true;
+            float time = UnityEngine.Random.Range(2f, 5f);
+            StartCoroutine(WaitAndInitialize(time));
         }
+
     }
 
     void InitializeTask(int task)
     {
-        GameObject.Find("Button " + task.ToString()).GetComponent<SpriteRenderer>().color = Color.red;
+        Color newColor;
+        if (task == 3) newColor = Color.red;
+        else newColor = new Color(1.0f, 0.647f, 0.0f);
+
+        GameObject.Find("Button " + task.ToString()).GetComponent<SpriteRenderer>().color = newColor;
     }
 
     // task e currentTask?
     public void CompleteTask(int task)
     {
+        Debug.Log("Task " + task.ToString() + " completa");
         ClearTask();
-        GameObject.Find("Button " + task.ToString()).GetComponent<SpriteRenderer>().color = Color.green;
+
+        Color color;
+        ColorUtility.TryParseHtmlString("#333B58", out color);
+        GameObject.Find("Button " + task.ToString()).GetComponent<SpriteRenderer>().color = color;
+
         pendingTasks.Remove(task);
         SceneManager.UnloadSceneAsync(GameManager.instance.currentTask);
         GameManager.instance.currentTask = "";
@@ -98,4 +107,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    IEnumerator WaitAndInitialize(float time)
+    {
+        Debug.Log("time: " + time.ToString());
+        yield return new WaitForSeconds(time);
+
+        isWaiting = false;
+        int amount = UnityEngine.Random.Range(1, 2);
+        Debug.Log("amount: " + amount.ToString());
+        for (int i = 0; i < amount; i++){
+            int index = UnityEngine.Random.Range(1, tasksAmount + 1);
+            Debug.Log("    add index: " + index.ToString());
+            pendingTasks.Add(index);
+            InitializeTask(index);
+        }
+    }
 }
