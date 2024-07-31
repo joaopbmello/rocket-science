@@ -30,6 +30,11 @@ public class GameManager : MonoBehaviour
         currentTime = Mathf.Max(0f, currentTime - Time.deltaTime);
         countdownText.text = currentTime.ToString("F2");
 
+        if (currentTime <= 3)
+        {
+            GameObject.Find("Cockpit").GetComponent<CockpitManager>().StartShake();
+        }
+
         if (currentTime <= 0)
         {
             if (pendingTasks.Count > 0)
@@ -38,7 +43,6 @@ public class GameManager : MonoBehaviour
             }
             else if (completed)
             {
-                GameObject.Find("Cockpit").GetComponent<CockpitManager>().StartShake();
                 GameObject.Find("Sky").GetComponent<SkyManager>().ChangeColor();
                 GameObject.Find("Clouds").GetComponent<CloudsManager>().Expand();
 
