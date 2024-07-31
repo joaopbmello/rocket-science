@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DigitButton : MonoBehaviour
+public class FinishButton : MonoBehaviour
 {
-    public bool up;
-    private DigitBox digitBox;
-
     // Start is called before the first frame update
     void Start()
     {
-        digitBox = GetComponentInParent<DigitBox>();
+        
     }
 
     // Update is called once per frame
@@ -21,7 +18,7 @@ public class DigitButton : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (up) digitBox.Increment();
-        else digitBox.Decrement();
+        gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+        GameManager.instance.CompleteGame();
     }
 }

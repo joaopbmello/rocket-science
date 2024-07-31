@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class GridPanel : MonoBehaviour
 {
-    private Transform gridTransform;
+    public TaskManager taskManager;
+
     private List<int> unselectedIndexes;
     private int totalBoxes = 16;
     private int unselectedCount = 5;
+    private bool completed = false;
 
     void Start()
     {
-        gridTransform = gameObject.transform;
-
         HashSet<int> uniqueIndexes = new HashSet<int>();
         while (uniqueIndexes.Count < unselectedCount)
         {
@@ -21,19 +21,34 @@ public class GridPanel : MonoBehaviour
 
         for (int i = 0; i < totalBoxes; i++)
         {
-            GridBox gridBox = gridTransform.GetChild(i).GetComponent<GridBox>();
+            GridBox gridBox = transform.GetChild(i).GetComponent<GridBox>();
             gridBox.SetSelected(!unselectedIndexes.Contains(i));
         }
     }
 
     void Update()
     {
-        if (unselectedCount == 0){
-            GameManager.instance.CompleteTask(2);
+        if (unselectedCount == 0)
+        {
+            completed = true;
+            taskManager.CompleteTask();
         }
     }
 
-    public void SelectBox(){
-        unselectedCount--;
+    public void SelectBox(bool selected)
+    {
+        if (selected)
+        {
+            unselectedCount--;
+        }
+        else
+        {
+            unselectedCount++;
+        }
+    }
+
+    public bool IsCompleted()
+    {
+        return completed;
     }
 }

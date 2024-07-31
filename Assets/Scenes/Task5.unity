@@ -317,7 +317,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2d141aa48177e44a90eb20e0110a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  up: 1
+  taskManager: {fileID: 0}
+  isIncreaseButton: 1
 --- !u!61 &190565374
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -454,7 +455,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2d141aa48177e44a90eb20e0110a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  up: 1
+  taskManager: {fileID: 0}
+  isIncreaseButton: 1
 --- !u!212 &390141928
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -598,7 +600,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2d141aa48177e44a90eb20e0110a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  up: 1
+  taskManager: {fileID: 0}
+  isIncreaseButton: 1
 --- !u!212 &483776129
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -664,7 +667,7 @@ GameObject:
   - component: {fileID: 744388967}
   - component: {fileID: 744388970}
   m_Layer: 0
-  m_Name: DigitBox1
+  m_Name: Digit 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -776,8 +779,8 @@ Transform:
   m_GameObject: {fileID: 744388965}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4, y: -1.25, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalPosition: {x: -6, y: -1.25, z: -1}
+  m_LocalScale: {x: 1.25, y: 1.5, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 190565371}
@@ -798,9 +801,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  digit: 0
   digitText: {fileID: 1766405719}
-  passwordScript: {fileID: 1283950534}
+  codeManager: {fileID: 1283950534}
 --- !u!1 &861036190
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,7 +961,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.5
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1003,7 +1005,7 @@ GameObject:
   - component: {fileID: 987722076}
   - component: {fileID: 987722079}
   m_Layer: 0
-  m_Name: DigitBox2
+  m_Name: Digit 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1115,8 +1117,8 @@ Transform:
   m_GameObject: {fileID: 987722074}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.35, y: -1.25, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalPosition: {x: -2, y: -1.25, z: -1}
+  m_LocalScale: {x: 1.25, y: 1.5, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 483776126}
@@ -1137,9 +1139,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
-  digit: 0
   digitText: {fileID: 861036192}
-  passwordScript: {fileID: 1283950534}
+  codeManager: {fileID: 1283950534}
 --- !u!1 &1031608036
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,7 +1232,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2d141aa48177e44a90eb20e0110a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  up: 0
+  taskManager: {fileID: 0}
+  isIncreaseButton: 0
 --- !u!212 &1031608040
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1375,7 +1377,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2d141aa48177e44a90eb20e0110a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  up: 0
+  taskManager: {fileID: 0}
+  isIncreaseButton: 0
 --- !u!212 &1237989689
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1537,7 +1540,7 @@ GameObject:
   - component: {fileID: 1283950534}
   - component: {fileID: 1283950535}
   m_Layer: 0
-  m_Name: Password
+  m_Name: Code Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1552,8 +1555,8 @@ Transform:
   m_GameObject: {fileID: 1283950532}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 5.28, z: 0}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2013062236}
@@ -1571,12 +1574,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ca583011196d2648a15ab5dcbffe2d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskManager: {fileID: 1655270540}
   digitBoxes:
   - {fileID: 744388970}
   - {fileID: 987722079}
   - {fileID: 1396235090}
   - {fileID: 1998554220}
-  passwordText: {fileID: 2013062237}
+  codeText: {fileID: 2013062237}
 --- !u!212 &1283950535
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1642,7 +1646,7 @@ GameObject:
   - component: {fileID: 1396235087}
   - component: {fileID: 1396235090}
   m_Layer: 0
-  m_Name: DigitBox3
+  m_Name: Digit 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1754,8 +1758,8 @@ Transform:
   m_GameObject: {fileID: 1396235085}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.35, y: -1.25, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalPosition: {x: 2, y: -1.25, z: -1}
+  m_LocalScale: {x: 1.25, y: 1.5, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 390141925}
@@ -1776,9 +1780,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 2
-  digit: 0
   digitText: {fileID: 77706421}
-  passwordScript: {fileID: 1283950534}
+  codeManager: {fileID: 1283950534}
 --- !u!1 &1445722591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1870,7 +1873,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2d141aa48177e44a90eb20e0110a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  up: 1
+  taskManager: {fileID: 0}
+  isIncreaseButton: 1
 --- !u!212 &1445722595
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2073,7 +2077,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.3372549}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.7254902}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2093,7 +2097,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 30, y: 15, z: 1}
+  m_LocalScale: {x: 60, y: 50, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2189,7 +2193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2d141aa48177e44a90eb20e0110a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  up: 0
+  taskManager: {fileID: 0}
+  isIncreaseButton: 0
 --- !u!212 &1703104446
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2420,7 +2425,7 @@ GameObject:
   - component: {fileID: 1998554217}
   - component: {fileID: 1998554220}
   m_Layer: 0
-  m_Name: DigitBox4
+  m_Name: Digit 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2532,8 +2537,8 @@ Transform:
   m_GameObject: {fileID: 1998554215}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4, y: -1.25, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalPosition: {x: 6, y: -1.25, z: -1}
+  m_LocalScale: {x: 1.25, y: 1.5, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1445722592}
@@ -2554,9 +2559,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 3
-  digit: 0
   digitText: {fileID: 1251195828}
-  passwordScript: {fileID: 1283950534}
+  codeManager: {fileID: 1283950534}
 --- !u!1 &2013062235
 GameObject:
   m_ObjectHideFlags: 0
@@ -2569,7 +2573,7 @@ GameObject:
   - component: {fileID: 2013062238}
   - component: {fileID: 2013062237}
   m_Layer: 0
-  m_Name: PasswordText
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2734,7 +2738,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2882,7 +2886,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2d141aa48177e44a90eb20e0110a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  up: 0
+  taskManager: {fileID: 0}
+  isIncreaseButton: 0
 --- !u!61 &2144129351
 BoxCollider2D:
   m_ObjectHideFlags: 0

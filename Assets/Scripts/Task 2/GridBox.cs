@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class GridBox : MonoBehaviour
 {
+    public GridPanel gridPanel;
     private SpriteRenderer sr;
     private bool selected = true;
 
@@ -28,12 +29,10 @@ public class GridBox : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (!selected)
-        {
-            selected = true;
-            GameObject.Find("GridPanel").GetComponent<GridPanel>().SelectBox();
-            UpdateColor();
-        }
-    }
+        if (gridPanel.taskManager.IsCompleted()) return;
 
+        selected = !selected;
+        UpdateColor();
+        gridPanel.SelectBox(selected);
+    }
 }

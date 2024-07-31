@@ -1,18 +1,17 @@
 using UnityEngine;
 
-public class Pipe : MonoBehaviour
+public class PipeController : MonoBehaviour
 {
-    public bool isConnected = false;
-    public int isCurved;
+    public TaskManager taskManager;
+    public PipeGrid pipeGrid;
     public Animator animator;
-
+    public bool isConnected, isCurved;
     public int row, column;
-    public char direction1, direction2;
-    private PipeGrid pipeGrid;
+
+    private char direction1, direction2;
 
     void Start()
     {
-        pipeGrid = GameObject.Find("PipeGrid").GetComponent<PipeGrid>();
         UpdateDirections();
 
         if (animator == null)
@@ -24,8 +23,6 @@ public class Pipe : MonoBehaviour
 
     void Update()
     {
-        //isConnected = CheckConnection();
-
         if (isConnected)
         {
             animator.SetBool("isConnected", true);
@@ -38,14 +35,16 @@ public class Pipe : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (taskManager.IsCompleted()) return;
+
         transform.Rotate(new Vector3(0, 0, -90));
         UpdateDirections();
     }
 
     void UpdateDirections()
     {
-        int angle = (int)transform.localRotation.eulerAngles.z;
-        if (isCurved == 1)
+        int angle = (int) transform.localRotation.eulerAngles.z;
+        if (isCurved)
         {
             if (angle == 0) SetDirections('D', 'R');
             else if (angle == 90) SetDirections('U', 'R');
@@ -67,7 +66,7 @@ public class Pipe : MonoBehaviour
         direction2 = d2;
     }
 
-    public bool containsDirection(char direction)
+    public bool ContainsDirection(char direction)
     {
         return direction1 == direction || direction2 == direction;
     }

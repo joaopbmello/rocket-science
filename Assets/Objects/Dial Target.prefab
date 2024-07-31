@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6576965113993886856}
   - component: {fileID: 5564299983632368675}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Dial Target
   m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,4 +172,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   taskScript: {fileID: 0}
+  comparisonTag: DialLine
   id: 0

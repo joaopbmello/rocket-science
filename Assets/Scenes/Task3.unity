@@ -227,7 +227,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.3372549}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.7254902}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -247,7 +247,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 30, y: 15, z: 1}
+  m_LocalScale: {x: 60, y: 50, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -313,7 +313,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.5
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -457,8 +457,8 @@ Transform:
   m_GameObject: {fileID: 1759282648}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.54, y: 0.03, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 5.03, y: 0, z: -1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -510,7 +510,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e742f19a21cc5944d99458a26085eebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  taskManager: {fileID: 2145838329}
+  temperatureBar: {fileID: 2054491150}
+  animator: {fileID: 1759282653}
 --- !u!95 &1759282653
 Animator:
   serializedVersion: 5
@@ -657,7 +659,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -689,8 +691,8 @@ Transform:
   m_GameObject: {fileID: 2054491148}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.62508, y: -2.3726, z: -1}
-  m_LocalScale: {x: 0.75, y: 0.25, z: 1}
+  m_LocalPosition: {x: -3.9376, y: -3.437, z: -1}
+  m_LocalScale: {x: 1.1244388, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1615746573}
@@ -707,6 +709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ade0e7dcbc1a34dae73252d52fbd1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskManager: {fileID: 2145838329}
   increaseRate: 1
   decreaseRate: 3
   buttonPressed: 0

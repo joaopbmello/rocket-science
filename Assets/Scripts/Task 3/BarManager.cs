@@ -1,11 +1,12 @@
 using UnityEngine;
 
-public class Task3 : MonoBehaviour
+public class BarManager : MonoBehaviour
 {
+    public TaskManager taskManager;
     public float increaseRate = 1f, decreaseRate = 3f;
     public bool buttonPressed = false;
 
-    private float height = 3f, minHeight = 0f, maxHeight = 6.5f;
+    private float height = 4f, minHeight = 0f, maxHeight = 9.5f;
     private Vector3 initialPosition;
     private Vector3 initialScale;
 
@@ -25,7 +26,7 @@ public class Task3 : MonoBehaviour
         }
         else if (height <= minHeight)
         {
-            GameManager.instance.CompleteTask(3);
+            taskManager.CompleteTask();
         }
         else if (!buttonPressed)
         {
@@ -41,8 +42,8 @@ public class Task3 : MonoBehaviour
         transform.localPosition = new Vector3(transform.localPosition.x, newHeight, transform.localPosition.z);
     }
 
-    public void onButtonPress()
+    public void SetButtonPress(bool value)
     {
-        buttonPressed = true;
+        buttonPressed = value;
     }
 }
