@@ -358,7 +358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5512330191444792999, guid: 599163f88715b3d4dbc88a8d473bdf7d, type: 3}
       propertyPath: m_Radius
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5512330191444792999, guid: 599163f88715b3d4dbc88a8d473bdf7d, type: 3}
       propertyPath: m_Offset.y
@@ -561,7 +561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5512330191444792999, guid: 599163f88715b3d4dbc88a8d473bdf7d, type: 3}
       propertyPath: m_Radius
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5512330191444792999, guid: 599163f88715b3d4dbc88a8d473bdf7d, type: 3}
       propertyPath: m_Offset.y
@@ -646,7 +646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5512330191444792999, guid: 599163f88715b3d4dbc88a8d473bdf7d, type: 3}
       propertyPath: m_Radius
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5512330191444792999, guid: 599163f88715b3d4dbc88a8d473bdf7d, type: 3}
       propertyPath: m_Offset.y
@@ -897,7 +897,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &1611224141
 AudioListener:
   m_ObjectHideFlags: 0

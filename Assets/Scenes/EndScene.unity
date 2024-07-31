@@ -490,9 +490,10 @@ GameObject:
   - component: {fileID: 1022029818}
   - component: {fileID: 1022029820}
   - component: {fileID: 1022029819}
+  - component: {fileID: 1022029821}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -613,6 +614,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1022029817}
   m_CullTransparentMesh: 1
+--- !u!114 &1022029821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022029817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e918a48fcd7785d4896ee9fa59e8d375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textsList:
+  - Success
+  - Sucesso
 --- !u!1 &1575792294
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,9 +640,10 @@ GameObject:
   - component: {fileID: 1575792295}
   - component: {fileID: 1575792297}
   - component: {fileID: 1575792296}
+  - component: {fileID: 1575792298}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -747,6 +764,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575792294}
   m_CullTransparentMesh: 1
+--- !u!114 &1575792298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575792294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e918a48fcd7785d4896ee9fa59e8d375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textsList:
+  - Exit
+  - Sair
 --- !u!1 &1645782205
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,9 +923,10 @@ GameObject:
   - component: {fileID: 1945395915}
   - component: {fileID: 1945395917}
   - component: {fileID: 1945395916}
+  - component: {fileID: 1945395918}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1014,6 +1047,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945395914}
   m_CullTransparentMesh: 1
+--- !u!114 &1945395918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945395914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e918a48fcd7785d4896ee9fa59e8d375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textsList:
+  - Restart
+  - Reiniciar
 --- !u!1 &2089312438
 GameObject:
   m_ObjectHideFlags: 0

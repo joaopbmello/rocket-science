@@ -6,7 +6,7 @@ public class BarManager : MonoBehaviour
     public float increaseRate = 1f, decreaseRate = 3f;
     public bool buttonPressed = false;
 
-    private float height = 4f, minHeight = 0f, maxHeight = 9.5f;
+    private float height = 4f;
     private Vector3 initialPosition;
     private Vector3 initialScale;
 
@@ -20,21 +20,17 @@ public class BarManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (height >= maxHeight)
-        {
-            GameManager.instance.GameOver();
-        }
-        else if (height <= minHeight)
+        if (height <= 0f)
         {
             taskManager.CompleteTask();
         }
         else if (!buttonPressed)
         {
-            height = Mathf.Min(height + increaseRate * Time.deltaTime, maxHeight);
+            height = Mathf.Min(height + increaseRate * Time.deltaTime, 9.5f);
         }
         else
         {
-            height = Mathf.Max(height - decreaseRate * Time.deltaTime, minHeight);
+            height = Mathf.Max(height - decreaseRate * Time.deltaTime, 0f);
         }
 
         transform.localScale = new Vector3(transform.localScale.x, height, transform.localScale.z);

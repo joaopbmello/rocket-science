@@ -9,6 +9,7 @@ TagManager:
   - PipeConnection
   - TaskObject
   - DialLine
+  - Text
   layers:
   - Default
   - TransparentFX

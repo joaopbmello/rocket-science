@@ -6,7 +6,6 @@ public class CloudsManager : MonoBehaviour
     public float speed = 0.5f;
     public float scaleDuration = 3f;
 
-
     public Vector3 targetScale = new Vector3(6f, 6f, 6f);
     private SpriteRenderer spriteRenderer;
 
