@@ -38,7 +38,11 @@ public class GameManager : MonoBehaviour
             }
             else if (completed)
             {
-                SceneManager.LoadScene("EndScene");
+                GameObject.Find("Cockpit").GetComponent<CockpitManager>().StartShake();
+                GameObject.Find("Sky").GetComponent<SkyManager>().ChangeColor();
+                GameObject.Find("Clouds").GetComponent<CloudsManager>().Expand();
+
+                // SceneManager.LoadScene("EndScene");
             }
         }
 
