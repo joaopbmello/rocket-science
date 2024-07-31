@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -34,7 +33,8 @@ public class GameManager : MonoBehaviour
         currentTime = Mathf.Max(0f, currentTime - Time.deltaTime);
         countdownText.text = currentTime.ToString("F2");
 
-        if (currentTime <= 0){
+        if (currentTime <= 0)
+        {
             if (pendingTasks.Count > 0)
             {
                 GameOver();
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
         if (task == 3) newColor = Color.red;
         else newColor = new Color(1.0f, 0.647f, 0.0f);
 
-        GameObject.Find("Button " + task.ToString()).GetComponent<SpriteRenderer>().color = newColor;
+        GameObject.Find("Task " + task.ToString()).GetComponent<SpriteRenderer>().color = newColor;
     }
 
     public void CompleteTask(int task)
@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
 
         Color color;
         ColorUtility.TryParseHtmlString("#333B58", out color);
-        GameObject.Find("Button " + task.ToString()).GetComponent<SpriteRenderer>().color = color;
+        GameObject.Find("Task " + task.ToString()).GetComponent<SpriteRenderer>().color = color;
         pendingTasks.Remove(task);
 
         StartCoroutine(WaitAndCloseTask(0.5f, GameManager.instance.currentTask));
@@ -87,8 +87,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("GameOver");
         Destroy(gameObject);
     }
-    
-    public void ClearTask(){
+
+    public void ClearTask()
+    {
         GameObject[] taskObjects = GameObject.FindGameObjectsWithTag("TaskObject");
 
         foreach (GameObject go in taskObjects)
@@ -105,7 +106,8 @@ public class GameManager : MonoBehaviour
         isWaiting = false;
         int amount = UnityEngine.Random.Range(1, 2);
         Debug.Log("amount: " + amount.ToString());
-        for (int i = 0; i < amount; i++){
+        for (int i = 0; i < amount; i++)
+        {
             int index = UnityEngine.Random.Range(1, tasksAmount + 1);
             Debug.Log("    add index: " + index.ToString());
             pendingTasks.Add(index);
@@ -113,13 +115,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    IEnumerator WaitAndCloseTask(float time, string task){
+    IEnumerator WaitAndCloseTask(float time, string task)
+    {
         yield return new WaitForSeconds(time);
 
         if (SceneManager.GetSceneByName(task).isLoaded)
         {
             SceneManager.UnloadSceneAsync(task);
             ClearTask();
-        }        
+        }
     }
 }
