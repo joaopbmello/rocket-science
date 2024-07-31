@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     private float currentTime, countdownTime = 24.1f;
     private bool completed;
 
-    // Start is called before the first frame update
     void Start()
     {
         instance = this;
@@ -26,7 +25,6 @@ public class GameManager : MonoBehaviour
         finishButton.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         currentTime = Mathf.Max(0f, currentTime - Time.deltaTime);
@@ -78,12 +76,8 @@ public class GameManager : MonoBehaviour
 
     void TaskWarning(int task)
     {
-        Color newColor;
-        if (task == 3) newColor = Color.red;
-        else newColor = new Color(1.0f, 0.647f, 0.0f);
-
-        GameObject.Find("Task " + task.ToString()).GetComponent<SpriteRenderer>().color = newColor;
-    }    
+        GameObject.Find("Task " + task.ToString()).GetComponent<Animator>().SetBool("isPending", true);
+    }
 
     IEnumerator WaitAndInitialize(float time)
     {
@@ -104,10 +98,8 @@ public class GameManager : MonoBehaviour
     {
         pendingTasks.Remove(task);
 
-        Color color;
-        ColorUtility.TryParseHtmlString("#333B58", out color);
-        GameObject.Find("Task " + task.ToString()).GetComponent<SpriteRenderer>().color = color;
+        GameObject.Find("Task " + task.ToString()).GetComponent<Animator>().SetBool("isPending", false);
     }
-    
-    
+
+
 }

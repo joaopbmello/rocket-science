@@ -854,6 +854,7 @@ GameObject:
   - component: {fileID: 1065954586}
   - component: {fileID: 1065954584}
   - component: {fileID: 1065954588}
+  - component: {fileID: 1065954589}
   m_Layer: 0
   m_Name: Task 5
   m_TagString: Untagged
@@ -987,6 +988,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.5, y: 4.25}
   m_EdgeRadius: 0
+--- !u!95 &1065954589
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065954583}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c8cd2d1591aa6c240b7e54d146b8264b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1069713180
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,6 +1021,7 @@ GameObject:
   - component: {fileID: 1069713183}
   - component: {fileID: 1069713181}
   - component: {fileID: 1069713185}
+  - component: {fileID: 1069713186}
   m_Layer: 0
   m_Name: Task 3
   m_TagString: Untagged
@@ -1132,6 +1155,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.25, y: 4.25}
   m_EdgeRadius: 0
+--- !u!95 &1069713186
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069713180}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d47232276a0b91447974de00ae5903aa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1219623570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,6 +1188,7 @@ GameObject:
   - component: {fileID: 1219623573}
   - component: {fileID: 1219623571}
   - component: {fileID: 1219623575}
+  - component: {fileID: 1219623576}
   m_Layer: 0
   m_Name: Task 2
   m_TagString: Untagged
@@ -1277,6 +1322,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.25, y: 4.25}
   m_EdgeRadius: 0
+--- !u!95 &1219623576
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219623570}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 66f34474794ea8a4abab5404c114e03b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1655356207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1558,6 +1624,7 @@ GameObject:
   - component: {fileID: 2092460610}
   - component: {fileID: 2092460608}
   - component: {fileID: 2092460612}
+  - component: {fileID: 2092460613}
   m_Layer: 0
   m_Name: Task 4
   m_TagString: Untagged
@@ -1691,6 +1758,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.25, y: 4.25}
   m_EdgeRadius: 0
+--- !u!95 &2092460613
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092460607}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eae46137fbcb5204baa94120b1e14ec4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

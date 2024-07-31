@@ -9,10 +9,10 @@ public class DialGameManager : MonoBehaviour
 
     void Start()
     {
-        float[,] centers = { { -7.5f, 0f }, { -2.5f, 0f }, { 2.5f, 0f } };
+        float[,] centers = { { -6f, -3.75f }, { 0f, -3.75f }, { 6f, -3.75f } };
         for (int i = 0; i < 3; i++)
         {
-            Vector3 v = new Vector2(centers[i, 0], centers[i, 1]) + Random.insideUnitCircle.normalized * 2f;
+            Vector3 v = new Vector2(centers[i, 0], centers[i, 1]) + Random.insideUnitCircle.normalized * 2.5f;
             GameObject t = Instantiate(target, v, Quaternion.identity);
             t.GetComponent<TriggerDetector>().id = i;
             t.transform.SetParent(this.transform);
@@ -32,7 +32,8 @@ public class DialGameManager : MonoBehaviour
         string lightName = "Light " + (id + 1);
 
         GameObject light = GameObject.Find(lightName);
-        if (light != null){
+        if (light != null)
+        {
             light.GetComponent<SpriteRenderer>().color =
                 targets[id] ? new Color(148f / 255f, 176f / 255f, 194f / 255f) : new Color(177f / 255f, 62f / 255f, 83f / 255f);
         }
