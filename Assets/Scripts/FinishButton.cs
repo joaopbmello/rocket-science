@@ -19,6 +19,7 @@ public class FinishButton : MonoBehaviour
     void OnMouseDown()
     {
         gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+        AudioManager.instance.completeAS.Play();   
         GameManager.instance.CompleteGame();
     }
 }

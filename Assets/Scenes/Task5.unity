@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2d141aa48177e44a90eb20e0110a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskManager: {fileID: 0}
+  taskManager: {fileID: 1655270540}
   isIncreaseButton: 1
 --- !u!61 &190565374
 BoxCollider2D:
@@ -455,7 +455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2d141aa48177e44a90eb20e0110a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskManager: {fileID: 0}
+  taskManager: {fileID: 1655270540}
   isIncreaseButton: 1
 --- !u!212 &390141928
 SpriteRenderer:
@@ -600,7 +600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2d141aa48177e44a90eb20e0110a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskManager: {fileID: 0}
+  taskManager: {fileID: 1655270540}
   isIncreaseButton: 1
 --- !u!212 &483776129
 SpriteRenderer:
@@ -1232,7 +1232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2d141aa48177e44a90eb20e0110a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskManager: {fileID: 0}
+  taskManager: {fileID: 1655270540}
   isIncreaseButton: 0
 --- !u!212 &1031608040
 SpriteRenderer:
@@ -1377,7 +1377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2d141aa48177e44a90eb20e0110a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskManager: {fileID: 0}
+  taskManager: {fileID: 1655270540}
   isIncreaseButton: 0
 --- !u!212 &1237989689
 SpriteRenderer:
@@ -1873,7 +1873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2d141aa48177e44a90eb20e0110a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskManager: {fileID: 0}
+  taskManager: {fileID: 1655270540}
   isIncreaseButton: 1
 --- !u!212 &1445722595
 SpriteRenderer:
@@ -2193,7 +2193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2d141aa48177e44a90eb20e0110a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskManager: {fileID: 0}
+  taskManager: {fileID: 1655270540}
   isIncreaseButton: 0
 --- !u!212 &1703104446
 SpriteRenderer:
@@ -2818,7 +2818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2d141aa48177e44a90eb20e0110a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskManager: {fileID: 0}
+  taskManager: {fileID: 1655270540}
   isIncreaseButton: 0
 --- !u!61 &2144129351
 BoxCollider2D:

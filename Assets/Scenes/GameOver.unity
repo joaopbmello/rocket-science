@@ -893,7 +893,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1665297493}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: OnPlayButton
-        m_Mode: 1
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1025,8 +1025,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1665297493}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: OnQuitButton
-        m_Mode: 6
+        m_MethodName: OnExitButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1102,6 +1102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c5442ab4bd09a84b936971c24ad895a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuCanvas: {fileID: 0}
+  difficultyCanvas: {fileID: 0}
 --- !u!4 &1665297494
 Transform:
   m_ObjectHideFlags: 0

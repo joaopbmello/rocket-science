@@ -35,7 +35,9 @@ public class TaskManager : MonoBehaviour
         Debug.Log(task.ToString() + " completa");
         
         GameManager.instance.RemoveTask(id);
-        StartCoroutine(WaitAndCloseTask(0.5f, task));        
+        StartCoroutine(WaitAndCloseTask(0.5f, task));   
+
+        AudioManager.instance.completeAS.Play();     
     }
 
     public void CloseTask(string task)

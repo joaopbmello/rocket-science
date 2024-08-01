@@ -27,19 +27,41 @@ public class GameManager : MonoBehaviour
         currentTask = "";
         finishButton.SetActive(false);
         newTaskDelay = 1f;
+        difficultyLevel = DifficultySettings.instance.difficultyLevel;
     }
 
     void Update()
     {
+        // warning sound effect
+        if (pendingTasks.Count == 0 && AudioManager.instance.warningAS.isPlaying)
+        {
+            Debug.Log("if1");
+            AudioManager.instance.warningAS.Stop();
+            AudioManager.instance.warningAS.loop = false;
+        }
+        if (pendingTasks.Count > 0 && !AudioManager.instance.warningAS.isPlaying)
+        {
+            Debug.Log("if2");
+            AudioManager.instance.warningAS.Play();
+            AudioManager.instance.warningAS.loop = true;
+        }
+
+        // time management
         currentTime = Mathf.Max(0f, currentTime - Time.deltaTime);
         countdownText.text = currentTime.ToString("F2");
         newTaskDelay -= Time.deltaTime;
 
+        // creating new tasks
+        if (newTaskDelay <= 0f && currentTime > 10f)
+        {
+            InitializeRandomTask((int) difficultyLevel);
+        }
+
+        // end animation and game ending
         if (currentTime <= 3)
         {
             GameObject.Find("Cockpit").GetComponent<CockpitManager>().StartShake();
         }
-
         if (currentTime <= 0)
         {
             if (pendingTasks.Count > 0)
@@ -51,16 +73,10 @@ public class GameManager : MonoBehaviour
                 GameObject.Find("Sky").GetComponent<SkyManager>().ChangeColor();
                 GameObject.Find("Clouds").GetComponent<CloudsManager>().Expand();
 
-                // SceneManager.LoadScene("EndScene");
+                SceneManager.LoadScene("EndScene");
 
             }
         }
-
-        if (newTaskDelay <= 0f && currentTime > 10f)
-        {
-            InitializeRandomTask((int) difficultyLevel);
-        }
-
         if (currentTime < 2f && pendingTasks.Count == 0)
         {
             finishButton.SetActive(true);
