@@ -35,15 +35,11 @@ public class GameManager : MonoBehaviour
         // warning sound effect
         if (pendingTasks.Count == 0 && AudioManager.instance.warningAS.isPlaying)
         {
-            Debug.Log("if1");
             AudioManager.instance.warningAS.Stop();
-            AudioManager.instance.warningAS.loop = false;
         }
         if (pendingTasks.Count > 0 && !AudioManager.instance.warningAS.isPlaying)
         {
-            Debug.Log("if2");
             AudioManager.instance.warningAS.Play();
-            AudioManager.instance.warningAS.loop = true;
         }
 
         // time management
@@ -64,6 +60,11 @@ public class GameManager : MonoBehaviour
         }
         if (currentTime <= 0)
         {
+            if (AudioManager.instance.warningAS.isPlaying)
+            {
+                AudioManager.instance.warningAS.Stop();
+            }
+            
             if (pendingTasks.Count > 0)
             {
                 GameOver();
@@ -115,12 +116,12 @@ public class GameManager : MonoBehaviour
             int newTask = -1;
             while (newTask == -1)
             {
-                if (currentTime <= 4f) return;
+                if (currentTime <= (4.5f - difficultyLevel)) return;
                 
                 int t = UnityEngine.Random.Range(1, tasksAmount + 1);
-                if (!pendingTasks.Contains(t) && (taskDelay[t-1] + 1) < currentTime)
+                if (!pendingTasks.Contains(t) && currentTime > (taskDelay[t-1] - difficultyLevel + 1))
                 {
-                    newTaskDelay = taskDelay[t-1] - (difficultyLevel % 1);
+                    newTaskDelay = Mathf.Max(newTaskDelay, taskDelay[t-1] - (difficultyLevel % 1) * 2);
                     newTask = t;
                 }
             }
