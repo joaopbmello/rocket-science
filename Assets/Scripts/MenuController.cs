@@ -22,7 +22,7 @@ public class MenuController : MonoBehaviour
         if (difficultyLevel > 0f)
         {
             DifficultySettings.instance.difficultyLevel = difficultyLevel;
-            SceneManager.LoadScene("MainScene");
+            SceneManager.LoadScene("Context");
         }
         // game over / success scene
         else if (difficultyLevel == 0f)

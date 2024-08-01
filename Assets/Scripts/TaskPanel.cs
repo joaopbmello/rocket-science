@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ButtonManager : MonoBehaviour
+public class TaskPanel : MonoBehaviour
 {
     public int id;
     public string taskName;
@@ -17,7 +17,7 @@ public class ButtonManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     void OnMouseDown(){
