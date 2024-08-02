@@ -161,20 +161,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Houston, we have a problem.\nSome modules are malfunctioning and will
-    need to be repaired manually. This mission depends on resolving these issues.\nDon\u2019t
+  m_text: "Houston, we have a problem.\n\nSome modules are malfunctioning and will
+    need to be repaired manually. This mission depends on resolving these issues.\n\nDon\u2019t
     worry, it\u2019s not rocket science\u2026 well I guess it is but you can handle
     it.\nGood luck!"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1134860ce9dbb4c40beb341676707998, type: 2}
-  m_sharedMaterial: {fileID: -6399581925117801331, guid: 1134860ce9dbb4c40beb341676707998, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1c01c989a5e2c1f4c9a1eb23ac5b3144, type: 2}
+  m_sharedMaterial: {fileID: 946673888047908263, guid: 1c01c989a5e2c1f4c9a1eb23ac5b3144, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4285591719
-  m_fontColor: {r: 0.654902, g: 0.94117653, b: 0.43921572, a: 1}
+    rgba: 4284790584
+  m_fontColor: {r: 0.21960786, g: 0.7176471, b: 0.3921569, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -191,8 +191,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 250
-  m_fontSizeBase: 250
+  m_fontSize: 155
+  m_fontSizeBase: 155
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0.024598122, w: 0}
+  m_margin: {x: 0, y: 0, z: -4.937498, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -256,7 +256,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6399581925117801331, guid: 1134860ce9dbb4c40beb341676707998, type: 2}
+  - {fileID: 946673888047908263, guid: 1c01c989a5e2c1f4c9a1eb23ac5b3144, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
