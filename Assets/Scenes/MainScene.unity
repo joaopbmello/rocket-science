@@ -154,6 +154,7 @@ MonoBehaviour:
   currentTask: 
   tasksAmount: 5
   finishButton: {fileID: 430516792}
+  explosions: {fileID: 730465104570147826, guid: 364891afd5851a14bad14fb94acf121e, type: 3}
   countdownText: {fileID: 1655356209}
 --- !u!4 &6732371
 Transform:
@@ -805,7 +806,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 14.75
+  orthographic size: 14.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

@@ -272,6 +272,7 @@ MonoBehaviour:
   textsList:
   - Medium
   - "M\xE9dio"
+  isContextScene: 0
 --- !u!1 &148224151
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,6 +459,7 @@ MonoBehaviour:
   textsList:
   - Settings
   - "Op\xE7\xF5es"
+  isContextScene: 0
 --- !u!114 &201712959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -608,6 +610,7 @@ MonoBehaviour:
   textsList:
   - Exit
   - Sair
+  isContextScene: 0
 --- !u!114 &238751240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -758,6 +761,7 @@ MonoBehaviour:
   textsList:
   - Play
   - Jogar
+  isContextScene: 0
 --- !u!114 &631388280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1394,6 +1398,7 @@ MonoBehaviour:
   textsList:
   - Quit
   - Sair
+  isContextScene: 0
 --- !u!114 &1014539518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2035,6 +2040,7 @@ MonoBehaviour:
   textsList:
   - Hard
   - "D\xEDficil"
+  isContextScene: 0
 --- !u!1 &1543770226
 GameObject:
   m_ObjectHideFlags: 0
@@ -2791,6 +2797,7 @@ MonoBehaviour:
   textsList:
   - Easy
   - "F\xE1cil"
+  isContextScene: 0
 --- !u!1 &1925191599
 GameObject:
   m_ObjectHideFlags: 0
