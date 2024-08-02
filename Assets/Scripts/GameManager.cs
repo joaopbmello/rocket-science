@@ -53,13 +53,12 @@ public class GameManager : MonoBehaviour
         }
 
         // end animation and game ending
-        if (currentTime <= 3)
+        if (currentTime <= 4)
         {
-            if (currentTime > 0 && !AudioManager.instance.countdownAS.isPlaying)
+            if (currentTime > 1 && !AudioManager.instance.countdownAS.isPlaying)
             {
                 AudioManager.instance.countdownAS.Play();
             }
-
             GameObject.Find("Cockpit").GetComponent<CockpitManager>().StartShake();
         }
         if (currentTime <= 0)
@@ -138,9 +137,9 @@ public class GameManager : MonoBehaviour
                 if (currentTime <= (8f - difficultyLevel * 2)) return;
 
                 int t = UnityEngine.Random.Range(1, tasksAmount + 1);
-                if (!pendingTasks.Contains(t) && currentTime > (taskDelay[t-1] - difficultyLevel))
+                if (!pendingTasks.Contains(t) && currentTime > (taskDelay[t - 1] - difficultyLevel))
                 {
-                    newTaskDelay = Mathf.Max(newTaskDelay, (taskDelay[t-1] + difficultyLevel) / difficultyLevel);
+                    newTaskDelay = Mathf.Max(newTaskDelay, (taskDelay[t - 1] + difficultyLevel) / difficultyLevel);
                     newTask = t;
                 }
             }
