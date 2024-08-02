@@ -16,6 +16,10 @@ public class TriggerDetector : MonoBehaviour
     {
         if (other.gameObject.CompareTag(comparisonTag))
         {
+            if (manager == null)
+            {
+                manager = transform.parent.gameObject.GetComponent<DialGameManager>();
+            }
             manager.SetTarget(id, true);
             manager.ChangeLight(id);
         }

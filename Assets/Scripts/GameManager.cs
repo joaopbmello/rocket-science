@@ -9,13 +9,12 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public string currentTask = "";
     public int tasksAmount;
-    public GameObject finishButton;
     public GameObject explosions;
     public TMP_Text countdownText;
 
     private List<int> pendingTasks = new List<int>();
     private float currentTime, countdownTime = 24.1f, newTaskDelay;
-    private float[] taskDelay = new float[] { 7.5f, 3f, 3f, 6f, 6f };
+    private float[] taskDelay = new float[] { 6f, 3f, 3f, 6f, 6f };
     private bool gameOver = false;
 
     // 1 = easy, 1.5 = medium, 2 = hard
@@ -26,7 +25,6 @@ public class GameManager : MonoBehaviour
         instance = this;
         currentTime = countdownTime;
         currentTask = "";
-        finishButton.SetActive(false);
         newTaskDelay = 1f;
         difficultyLevel = DifficultySettings.instance.difficultyLevel;
     }
@@ -49,7 +47,7 @@ public class GameManager : MonoBehaviour
         newTaskDelay -= Time.deltaTime;
 
         // creating new tasks
-        if (newTaskDelay <= 0f && currentTime > 10f)
+        if (newTaskDelay <= 0f)
         {
             InitializeRandomTask((int)difficultyLevel);
         }
@@ -99,15 +97,12 @@ public class GameManager : MonoBehaviour
                 Invoke("CompleteGame", 12f);
             }
         }
-        if (currentTime < 2f && pendingTasks.Count == 0)
-        {
-            finishButton.SetActive(true);
-        }
 
     }
 
     public void CompleteGame()
     {
+        AudioManager.instance.launchAS.Stop();
         DifficultySettings.instance.SetEndingIndex(1);
         SceneManager.LoadScene("GameOver");
     }
@@ -140,12 +135,12 @@ public class GameManager : MonoBehaviour
             int newTask = -1;
             while (newTask == -1)
             {
-                if (currentTime <= (4.5f - difficultyLevel)) return;
+                if (currentTime <= (8f - difficultyLevel * 2)) return;
 
                 int t = UnityEngine.Random.Range(1, tasksAmount + 1);
-                if (!pendingTasks.Contains(t) && currentTime > (taskDelay[t - 1] - difficultyLevel + 1))
+                if (!pendingTasks.Contains(t) && currentTime > (taskDelay[t-1] - difficultyLevel))
                 {
-                    newTaskDelay = Mathf.Max(newTaskDelay, taskDelay[t - 1] - (difficultyLevel % 1) * 2);
+                    newTaskDelay = Mathf.Max(newTaskDelay, (taskDelay[t-1] + difficultyLevel) / difficultyLevel);
                     newTask = t;
                 }
             }

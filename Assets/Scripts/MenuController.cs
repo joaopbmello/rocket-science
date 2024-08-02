@@ -12,12 +12,14 @@ public class MenuController : MonoBehaviour
         {"Easy", "Medium", "Hard"},
         {"Fácil", "Médio", "Difícil"}
     };
-    public bool endingScene;
+    public bool endingScene, creditsScene;
 
     private int difficultyIndex = 0;
 
     void Start()
     {
+        if (creditsScene) return;
+
         if (endingScene)
         {
             DifficultySettings.instance.SetFinalText();
@@ -30,10 +32,15 @@ public class MenuController : MonoBehaviour
 
     public void OnPlayButton(bool restart)
     {
-        DifficultySettings.instance.difficultyLevel = difficultyIndex * 0.5f + 1;
-
-        if (restart) SceneManager.LoadScene("MainScene");
-        else SceneManager.LoadScene("Context");
+        if (restart)
+        {
+            SceneManager.LoadScene("MainScene");
+        }
+        else
+        {
+            DifficultySettings.instance.difficultyLevel = difficultyIndex * 0.5f + 1;
+            SceneManager.LoadScene("Context");
+        } 
     }
 
     public void ChangeDifficulty(int i)
@@ -52,6 +59,11 @@ public class MenuController : MonoBehaviour
     public void OnOptionsButton()
     {
         SceneManager.LoadScene("Settings");
+    }
+
+    public void OnCreditsButton()
+    {
+        SceneManager.LoadScene("Credits");
     }
 
     public void OnExitButton()

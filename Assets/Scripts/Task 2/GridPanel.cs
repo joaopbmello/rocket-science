@@ -28,7 +28,7 @@ public class GridPanel : MonoBehaviour
 
     void Update()
     {
-        if (unselectedCount == 0)
+        if (unselectedCount == 0 && !taskManager.IsCompleted())
         {
             completed = true;
             taskManager.CompleteTask();

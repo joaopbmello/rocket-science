@@ -21,7 +21,7 @@ public class CodeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (IsCorrect(0) && IsCorrect(1) && IsCorrect(2) && IsCorrect(3))
+        if (IsCorrect(0) && IsCorrect(1) && IsCorrect(2) && IsCorrect(3) && !taskManager.IsCompleted())
         {
             taskManager.CompleteTask();
         }

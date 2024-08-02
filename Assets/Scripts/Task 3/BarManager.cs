@@ -20,7 +20,7 @@ public class BarManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (height <= 0f)
+        if (height <= 0f && !taskManager.IsCompleted())
         {
             taskManager.CompleteTask();
         }

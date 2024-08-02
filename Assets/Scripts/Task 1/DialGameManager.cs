@@ -22,7 +22,7 @@ public class DialGameManager : MonoBehaviour
 
     void Update()
     {
-        if (!targets.Contains(false))
+        if (!targets.Contains(false) && !taskManager.IsCompleted())
         {
             taskManager.CompleteTask();
         }
