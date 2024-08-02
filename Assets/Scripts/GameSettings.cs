@@ -11,7 +11,7 @@ public class GameSettings : MonoBehaviour
     public Button languageLeft, languageRight;
     public TMP_Text languageText;
 
-    private List<string> languages = new List<string>() {"english", "português"};
+    private List<string> languages = new List<string>() {"English", "Português"};
     private int languageIndex;
     public AudioMixer audioMixer;
 
