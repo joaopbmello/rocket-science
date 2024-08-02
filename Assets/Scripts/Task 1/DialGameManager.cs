@@ -12,7 +12,7 @@ public class DialGameManager : MonoBehaviour
         float[,] centers = { { -6f, -3.75f }, { 0f, -3.75f }, { 6f, -3.75f } };
         for (int i = 0; i < 3; i++)
         {
-            Vector3 v = new Vector2(centers[i, 0], centers[i, 1]) + Random.insideUnitCircle.normalized * 2f;
+            Vector3 v = new Vector2(centers[i, 0], centers[i, 1]) + Random.insideUnitCircle.normalized * 2.25f;
             v.z = -1;
             GameObject t = Instantiate(target, v, Quaternion.identity);
             t.GetComponent<TriggerDetector>().id = i;
