@@ -58,11 +58,15 @@ public class GameManager : MonoBehaviour
         // end animation and game ending
         if (currentTime <= 3)
         {
+            if (currentTime > 0 && !AudioManager.instance.countdownAS.isPlaying)
+            {
+                AudioManager.instance.countdownAS.Play();
+            }
+
             GameObject.Find("Cockpit").GetComponent<CockpitManager>().StartShake();
         }
         if (currentTime <= 0)
         {
-
             if (AudioManager.instance.warningAS.isPlaying)
             {
                 AudioManager.instance.warningAS.Stop();
@@ -72,12 +76,20 @@ public class GameManager : MonoBehaviour
             {
                 if (!gameOver)
                 {
+                    if (!AudioManager.instance.explosionAS.isPlaying)
+                    {
+                        AudioManager.instance.explosionAS.Play();
+                    }
                     gameOver = true;
                     StartCoroutine(GameOver());
                 }
             }
             else if (completed)
             {
+                if (!AudioManager.instance.launchAS.isPlaying)
+                {
+                    AudioManager.instance.launchAS.Play();
+                }
                 GameObject.Find("Sky").GetComponent<SkyManager>().ChangeColor();
                 GameObject.Find("Clouds").GetComponent<CloudsManager>().Expand();
                 Invoke("EndGame", 12f);
