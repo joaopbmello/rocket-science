@@ -32,14 +32,15 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // warning sound effect
-        if (pendingTasks.Count == 0 && AudioManager.instance.warningAS.isPlaying)
-        {
-            AudioManager.instance.warningAS.Stop();
-        }
         if (pendingTasks.Count > 0 && !AudioManager.instance.warningAS.isPlaying)
         {
             AudioManager.instance.warningAS.Play();
         }
+        if (pendingTasks.Count == 0 && AudioManager.instance.warningAS.isPlaying)
+        {
+            AudioManager.instance.warningAS.Stop();
+        }
+        
 
         // time management
         currentTime = Mathf.Max(0f, currentTime - Time.deltaTime);
