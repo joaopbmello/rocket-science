@@ -15,8 +15,7 @@ public class GameManager : MonoBehaviour
 
     private List<int> pendingTasks = new List<int>();
     private float currentTime, countdownTime = 24.1f, newTaskDelay;
-    private bool completed;
-    private float[] taskDelay = new float[] {7.5f, 3f, 3f, 6f, 6f};
+    private float[] taskDelay = new float[] { 7.5f, 3f, 3f, 6f, 6f };
     private bool gameOver = false;
 
     // 1 = easy, 1.5 = medium, 2 = hard
@@ -85,11 +84,11 @@ public class GameManager : MonoBehaviour
                     string task = GameManager.instance.currentTask;
                     if (task != "" && SceneManager.GetSceneByName(task).isLoaded)
                         SceneManager.UnloadSceneAsync(task);
-                        
+
                     StartCoroutine(GameOver());
                 }
             }
-            else if (completed)
+            else
             {
                 if (!AudioManager.instance.launchAS.isPlaying)
                 {
@@ -97,7 +96,7 @@ public class GameManager : MonoBehaviour
                 }
                 GameObject.Find("Sky").GetComponent<SkyManager>().ChangeColor();
                 GameObject.Find("Clouds").GetComponent<CloudsManager>().Expand();
-                Invoke("EndGame", 12f);
+                Invoke("CompleteGame", 12f);
             }
         }
         if (currentTime < 2f && pendingTasks.Count == 0)
@@ -107,7 +106,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void EndGame()
+    public void CompleteGame()
     {
         DifficultySettings.instance.SetEndingIndex(1);
         SceneManager.LoadScene("GameOver");
@@ -120,11 +119,6 @@ public class GameManager : MonoBehaviour
         Debug.Log("Fim");
         DifficultySettings.instance.SetEndingIndex(0);
         SceneManager.LoadScene("GameOver");
-    }
-
-    public void CompleteGame()
-    {
-        completed = true;
     }
 
     public bool IsPending(int task)
