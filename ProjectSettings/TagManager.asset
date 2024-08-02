@@ -10,6 +10,7 @@ TagManager:
   - TaskObject
   - DialLine
   - Text
+  - FinalText
   layers:
   - Default
   - TransparentFX

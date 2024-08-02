@@ -5,14 +5,10 @@ public class TriggerDetector : MonoBehaviour
     public DialGameManager manager;
     public string comparisonTag;
     public int id;
-    
-    private SpriteRenderer sr;
 
     void Start()
     {
         manager = transform.parent.gameObject.GetComponent<DialGameManager>();
-        sr = gameObject.GetComponent<SpriteRenderer>();
-        sr.color = new Color(0f, 0f, 0f, 0f);
         manager.ChangeLight(id);
     }
 

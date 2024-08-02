@@ -8,7 +8,8 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
     public AudioMixer audioMixer;
     public AudioSource completeAS, warningAS;
-    public AudioClip completeSound, warningSound;
+
+    public AudioSource typingAS, clickingAS;
 
     private bool warningTask;
     
@@ -39,9 +40,14 @@ public class AudioManager : MonoBehaviour
             audioMixer.SetFloat("SoundVolume", -100f);
         else 
             audioMixer.SetFloat("SoundVolume", Mathf.Log10(soundVolume) * 30);
+    }
 
-        completeAS.clip = completeSound;
-        warningAS.clip = warningSound;
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            AudioManager.instance.clickingAS.Play();
+        }
     }
 
     public void SetMusicVolume(float volume)
@@ -70,4 +76,5 @@ public class AudioManager : MonoBehaviour
         }        
         PlayerPrefs.SetFloat("SoundVolume", volume);
     }
+    
 }

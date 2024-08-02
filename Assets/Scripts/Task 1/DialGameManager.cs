@@ -13,6 +13,7 @@ public class DialGameManager : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             Vector3 v = new Vector2(centers[i, 0], centers[i, 1]) + Random.insideUnitCircle.normalized * 2f;
+            v.z = -1;
             GameObject t = Instantiate(target, v, Quaternion.identity);
             t.GetComponent<TriggerDetector>().id = i;
             t.transform.SetParent(this.transform);

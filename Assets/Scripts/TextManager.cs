@@ -10,6 +10,8 @@ public class TextManager : MonoBehaviour
     public bool isContextScene = false;
     private TMP_Text text;
 
+    private bool skip = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,13 @@ public class TextManager : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (Input.anyKeyDown) skip = true; 
+    }
+
+
+
     public void UpdateText()
     {
         int index = PlayerPrefs.GetInt("Language", 0);
@@ -35,14 +44,17 @@ public class TextManager : MonoBehaviour
         message = message.Replace("\\n", "\n");
         float delay = 0.025f;
         text.text = "";
+
+        AudioManager.instance.typingAS.Play();
         foreach (char letter in message.ToCharArray())
         {
-            if (Input.anyKeyDown) break;
+            if (skip) break;
             text.text += letter;
             yield return new WaitForSeconds(delay);
         }
-
+        AudioManager.instance.typingAS.Stop();
         text.text = message;
+
         yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("MainScene");
     }
