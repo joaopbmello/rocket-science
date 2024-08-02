@@ -63,6 +63,9 @@ public class TaskManager : MonoBehaviour
     {
         GameObject[] taskObjects = GameObject.FindGameObjectsWithTag("TaskObject");
         foreach (GameObject go in taskObjects) Destroy(go);
+
+        taskObjects = GameObject.FindGameObjectsWithTag("Target");
+        foreach (GameObject go in taskObjects) Destroy(go);
     }
 
     public bool IsCompleted()

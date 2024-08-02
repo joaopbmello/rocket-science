@@ -81,6 +81,11 @@ public class GameManager : MonoBehaviour
                         AudioManager.instance.explosionAS.Play();
                     }
                     gameOver = true;
+
+                    string task = GameManager.instance.currentTask;
+                    if (task != "" && SceneManager.GetSceneByName(task).isLoaded)
+                        SceneManager.UnloadSceneAsync(task);
+                        
                     StartCoroutine(GameOver());
                 }
             }
