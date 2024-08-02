@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
         // creating new tasks
         if (newTaskDelay <= 0f)
         {
-            InitializeRandomTask((int)difficultyLevel);
+            InitializeRandomTask(1);
         }
 
         // end animation and game ending
@@ -78,9 +78,8 @@ public class GameManager : MonoBehaviour
                     }
                     gameOver = true;
 
-                    string task = GameManager.instance.currentTask;
-                    if (task != "" && SceneManager.GetSceneByName(task).isLoaded)
-                        SceneManager.UnloadSceneAsync(task);
+                    GameObject t = GameObject.Find("Task Manager");
+                    if (t != null) t.GetComponent<TaskManager>().CloseTask(currentTask);
 
                     StartCoroutine(GameOver());
                 }
@@ -112,6 +111,7 @@ public class GameManager : MonoBehaviour
         Instantiate(explosions, new Vector3(0, 0, -2), Quaternion.identity);
         yield return new WaitForSeconds(1);
         Debug.Log("Fim");
+        
         DifficultySettings.instance.SetEndingIndex(0);
         SceneManager.LoadScene("GameOver");
     }

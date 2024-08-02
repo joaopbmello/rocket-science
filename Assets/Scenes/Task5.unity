@@ -668,7 +668,7 @@ GameObject:
   - component: {fileID: 744388970}
   m_Layer: 0
   m_Name: Digit 1
-  m_TagString: Untagged
+  m_TagString: TaskObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1006,7 +1006,7 @@ GameObject:
   - component: {fileID: 987722079}
   m_Layer: 0
   m_Name: Digit 2
-  m_TagString: Untagged
+  m_TagString: TaskObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1541,7 +1541,7 @@ GameObject:
   - component: {fileID: 1283950535}
   m_Layer: 0
   m_Name: Code Manager
-  m_TagString: Untagged
+  m_TagString: TaskObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1647,7 +1647,7 @@ GameObject:
   - component: {fileID: 1396235090}
   m_Layer: 0
   m_Name: Digit 3
-  m_TagString: Untagged
+  m_TagString: TaskObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2358,7 +2358,7 @@ GameObject:
   - component: {fileID: 1998554220}
   m_Layer: 0
   m_Name: Digit 4
-  m_TagString: Untagged
+  m_TagString: TaskObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

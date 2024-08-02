@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 71972002}
   m_Layer: 0
   m_Name: Light 2
-  m_TagString: Untagged
+  m_TagString: TaskObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -356,6 +356,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3237133166536932268, guid: 599163f88715b3d4dbc88a8d473bdf7d, type: 3}
+      propertyPath: m_TagString
+      value: TaskObject
+      objectReference: {fileID: 0}
     - target: {fileID: 5512330191444792999, guid: 599163f88715b3d4dbc88a8d473bdf7d, type: 3}
       propertyPath: m_Radius
       value: 2.5
@@ -559,6 +563,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dial 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3237133166536932268, guid: 599163f88715b3d4dbc88a8d473bdf7d, type: 3}
+      propertyPath: m_TagString
+      value: TaskObject
+      objectReference: {fileID: 0}
     - target: {fileID: 5512330191444792999, guid: 599163f88715b3d4dbc88a8d473bdf7d, type: 3}
       propertyPath: m_Radius
       value: 2.5
@@ -643,6 +651,10 @@ PrefabInstance:
     - target: {fileID: 3237133166536932268, guid: 599163f88715b3d4dbc88a8d473bdf7d, type: 3}
       propertyPath: m_Name
       value: Dial 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3237133166536932268, guid: 599163f88715b3d4dbc88a8d473bdf7d, type: 3}
+      propertyPath: m_TagString
+      value: TaskObject
       objectReference: {fileID: 0}
     - target: {fileID: 5512330191444792999, guid: 599163f88715b3d4dbc88a8d473bdf7d, type: 3}
       propertyPath: m_Radius
@@ -808,7 +820,7 @@ GameObject:
   - component: {fileID: 1424060663}
   m_Layer: 0
   m_Name: Light 1
-  m_TagString: Untagged
+  m_TagString: TaskObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -984,7 +996,7 @@ GameObject:
   - component: {fileID: 1634877302}
   m_Layer: 0
   m_Name: Light 3
-  m_TagString: Untagged
+  m_TagString: TaskObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
