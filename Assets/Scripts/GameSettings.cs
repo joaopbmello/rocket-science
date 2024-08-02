@@ -1,9 +1,9 @@
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Audio;
-using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameSettings : MonoBehaviour
 {
@@ -11,7 +11,7 @@ public class GameSettings : MonoBehaviour
     public Button languageLeft, languageRight;
     public TMP_Text languageText;
 
-    private List<string> languages = new List<string>() {"English", "Português"};
+    private List<string> languages = new List<string>() { "English", "Português" };
     private int languageIndex;
     public AudioMixer audioMixer;
 
@@ -39,11 +39,11 @@ public class GameSettings : MonoBehaviour
 
     void UpdateLanguageButtons()
     {
-        if (languageIndex == 0)  languageLeft.gameObject.SetActive(false);
+        if (languageIndex == 0) languageLeft.gameObject.SetActive(false);
         else languageLeft.gameObject.SetActive(true);
-        
+
         if (languageIndex == languages.Count - 1) languageRight.gameObject.SetActive(false);
-        else languageRight.gameObject.SetActive(true); 
+        else languageRight.gameObject.SetActive(true);
     }
 
     void UpdateText()
