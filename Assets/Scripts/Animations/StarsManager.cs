@@ -1,12 +1,11 @@
 using System.Collections;
 using UnityEngine;
 
-public class CloudsManager : MonoBehaviour
+public class StarsManager : MonoBehaviour
 {
-    public float speed = 0.5f;
-    public float scaleDuration = 3f;
+    public float scaleDuration = 24f;
 
-    public Vector3 targetScale = new Vector3(6f, 6f, 6f);
+    public Vector3 targetScale = new Vector3(2f, 2f, 2f);
     private SpriteRenderer spriteRenderer;
 
     void Start()
@@ -16,7 +15,7 @@ public class CloudsManager : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.left * speed * Time.deltaTime);
+
     }
 
     public void ZoomIn()

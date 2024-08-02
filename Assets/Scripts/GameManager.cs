@@ -92,7 +92,8 @@ public class GameManager : MonoBehaviour
                     AudioManager.instance.launchAS.Play();
                 }
                 GameObject.Find("Sky").GetComponent<SkyManager>().ChangeColor();
-                GameObject.Find("Clouds").GetComponent<CloudsManager>().Expand();
+                GameObject.Find("Stars").GetComponent<StarsManager>().ZoomIn();
+                GameObject.Find("Clouds").GetComponent<CloudsManager>().ZoomIn();
                 Invoke("CompleteGame", 12f);
             }
         }
